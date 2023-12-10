@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.head_ref =~ 'hotfix/*' && github.base_ref == 'main' && github.event.pull_request.merged == true
+    if: github.head_ref ~ 'hotfix/*' && github.base_ref == 'main' && github.event.pull_request.merged == true
     steps:
     - uses: actions/checkout@v2
     - name: Run a script
